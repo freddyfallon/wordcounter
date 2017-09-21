@@ -1,6 +1,7 @@
 class WordCounter {
 	constructor(text) {
 		this.text = text;
+		this.wordCount = {};
 	}
 
 	makeLowerCase() {
@@ -10,6 +11,17 @@ class WordCounter {
 	splitWords() {
 		this.text = this.text.split(" ");
 	}
+
+	countWords() {
+		this.text.forEach((word) => {
+			if (this.wordCount.hasOwnProperty(word)) {
+				this.wordCount[word] ++;
+			} else this.wordCount[word] = 1;
+		})
+		return this.wordCount;
+	}
+
+
 };
 
 module.exports = WordCounter;
