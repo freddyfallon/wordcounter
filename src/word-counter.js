@@ -8,6 +8,10 @@ class WordCounter {
 		this.text = this.text.toLowerCase();
 	}
 
+	purifyText() {
+		this.text = this.text.replace(/[^0-9a-z\ ]/gi, '').replace(/\s+/g, " ")
+	}
+
 	splitWords() {
 		this.text = this.text.split(" ");
 	}

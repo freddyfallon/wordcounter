@@ -30,6 +30,18 @@ describe("makeLowerCase", () => {
 	});
 });
 
+describe("purifyText", () => {
+	let counter
+	beforeEach(() => {
+		counter = new WordCounter("!£@$%^&*(){}{[]~`:;  ")
+	});
+
+	it("should remove all special characters and whitespace", () => {
+		counter.purifyText();
+		expect(counter.text).to.equal(" ");
+	})
+});
+
 describe("splitWords", () => {
 	let counter;
 
