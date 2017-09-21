@@ -13,6 +13,18 @@ describe("text", () => {
 	});
 })
 
+describe("makeLowerCase", () => {
+	let counter
+	beforeEach(() => {
+		counter = new WordCounter("Hello THERE")
+	})
+
+	it("should make all words lower case", () => {
+		counter.makeLowerCase()
+		expect(counter.text).to.equal("hello there");
+	});
+})
+
 describe("splitWords", () => {
 	let counter;
 
@@ -21,6 +33,7 @@ describe("splitWords", () => {
 	})
 
 	it("should split a string into an array of words", () => {
-		expect(counter.splitWords()).to.be.an("array").that.does.include("One" && "two" && "three");
-	})
+		counter.splitWords()
+		expect(counter.text).to.be.an("array").that.does.include("One" && "two" && "three");
+	})	
 })

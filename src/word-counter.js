@@ -3,8 +3,12 @@ class WordCounter {
 		this.text = text;
 	}
 
+	makeLowerCase() {
+		this.text = this.text.toLowerCase();
+	}
+
 	splitWords() {
-		return this.text.split(" ");
+		this.text = this.text.split(" ");
 	}
 };
 
