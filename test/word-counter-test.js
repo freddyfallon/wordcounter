@@ -13,11 +13,11 @@ describe("initial state", () => {
 	});
 
 	it("should have a wordCount with and empty object", () =>{
-		expect(counter.wordCount).to.deep.equal({})
+		expect(counter.wordCount).to.deep.equal({});
 	});
 
 	it("should have an empty primeWords array", () => {
-		expect(counter.primeWords).to.be.an("array").that.is.empty;
+		expect(counter.primeNumbers).to.be.an("array").that.is.empty;
 	})
 });
 
@@ -63,23 +63,23 @@ describe("countWords", () => {
 	let counter;
 
 	beforeEach(() => {
-		counter = new WordCounter(["one", "two", "two", "three", "three", "three"])
+		counter = new WordCounter(["one", "two", "two", "three", "three", "three"]);
 	});
 
 	it("should return an object with counts", () => {
-		expect(counter.countWords()).to.deep.equal({"one": 1, "two": 2, "three": 3})
+		expect(counter.countWords()).to.deep.equal({"one": 1, "two": 2, "three": 3});
 	})
 })
 
 describe("getPrimes", () => {
 	let counter;
 	beforeEach(() => {
-		counter = new WordCounter(["one", "two", "two", "three", "three", "three", "four", "four", "four", "four"])
-		counter.wordCount = {"one": 1, "two": 2, "three": 3, "four": 4}
+		counter = new WordCounter(["one", "two", "two", "three", "three", "three", "four", "four", "four", "four"]);
+		counter.wordCount = {"one": 1, "two": 2, "three": 3, "four": 4};
 	})
 
 	it("should add primes to primeWords array", () => {
 		counter.getPrimes();
-		expect(counter.primeWords).to.be.an("array").that.does.include(1 && 2 && 3).but.does.not.include(4);
+		expect(counter.primeNumbers).to.be.an("array").that.does.include(1 && 2 && 3).but.does.not.include(4);
 	})
 })

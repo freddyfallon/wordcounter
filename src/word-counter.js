@@ -4,7 +4,7 @@ class WordCounter {
 	constructor(text) {
 		this.text = text;
 		this.wordCount = {};
-		this.primeWords = [];
+		this.primeNumbers = [];
 	}
 
 	makeLowerCase() {
@@ -35,8 +35,16 @@ class WordCounter {
 				}
 			}
 			if (prime === true) {
-				this.primeWords.push(this.wordCount[key]);
+				this.primeNumbers.push(this.wordCount[key]);
 			}
+		})
+	}
+
+	showWords() {
+		_.forIn(this.wordCount, (value, key) => {
+			if (this.primeNumbers.includes(value)) {
+				console.log(key + ": " + value + " - prime number");
+			} else console.log(key + ": " + value);
 		})
 	}
 
