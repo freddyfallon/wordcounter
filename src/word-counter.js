@@ -1,6 +1,6 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
-class WordCounter {
+export default class WordCounter {
 	constructor(text) {
 		this.text = text;
 		this.wordCount = {};
@@ -12,7 +12,7 @@ class WordCounter {
 	}
 
 	purifyText() {
-		this.text = this.text.replace(/[^0-9a-z\ ]/gi, '').replace(/\s+/g, " ")
+		this.text = this.text.replace(/[^0-9a-z\ ]/gi, ' ').replace(/\s+/g, " ")
 	}
 
 	splitWords() {
@@ -60,5 +60,3 @@ class WordCounter {
 	}
 
 };
-
-module.exports = WordCounter;

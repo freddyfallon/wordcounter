@@ -1,5 +1,5 @@
-const expect = require('chai').expect;
-const WordCounter = require('../src/word-counter');
+import { expect } from 'chai';
+import WordCounter from '../src/word-counter';
 
 describe("initial state", () => {
 	let counter;
