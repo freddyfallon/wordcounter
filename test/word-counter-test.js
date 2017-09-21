@@ -80,6 +80,6 @@ describe("getPrimes", () => {
 
 	it("should add primes to primeWords array", () => {
 		counter.getPrimes();
-		expect(counter.primeNumbers).to.be.an("array").that.does.include(1 && 2 && 3).but.does.not.include(4);
+		expect(counter.primeNumbers).to.be.an("array").that.does.include(2 && 3).but.does.not.include(4 && 1);
 	})
 })

@@ -23,6 +23,7 @@ class WordCounter {
 		this.text.forEach((word) => {
 			this.wordCount.hasOwnProperty(word) ? this.wordCount[word] ++ : this.wordCount[word] = 1;
 		})
+
 		return this.wordCount;
 	}
 
@@ -34,6 +35,7 @@ class WordCounter {
 					prime = false;
 				}
 			}
+			if (value === 1) {prime = false};
 			if (prime === true) {
 				this.primeNumbers.push(this.wordCount[key]);
 			}
@@ -46,6 +48,15 @@ class WordCounter {
 				console.log(key + ": " + value + " - prime number");
 			} else console.log(key + ": " + value);
 		})
+	}
+
+	run() {
+		this.makeLowerCase();
+		this.purifyText();
+		this.splitWords();
+		this.countWords();
+		this.getPrimes();
+		this.showWords();
 	}
 
 };
