@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const WordCounter = require('../src/word-counter');
 
-describe("text and wordCount", () => {
+describe("initial state", () => {
 	let counter;
 
 	beforeEach(() =>{
@@ -14,6 +14,10 @@ describe("text and wordCount", () => {
 
 	it("should have a wordCount with and empty object", () =>{
 		expect(counter.wordCount).to.deep.equal({})
+	});
+
+	it("should have an empty primeWords array", () => {
+		expect(counter.primeWords).to.be.an("array").that.is.empty;
 	})
 });
 
@@ -64,5 +68,18 @@ describe("countWords", () => {
 
 	it("should return an object with counts", () => {
 		expect(counter.countWords()).to.deep.equal({"one": 1, "two": 2, "three": 3})
+	})
+})
+
+describe("getPrimes", () => {
+	let counter;
+	beforeEach(() => {
+		counter = new WordCounter(["one", "two", "two", "three", "three", "three", "four", "four", "four", "four"])
+		counter.wordCount = {"one": 1, "two": 2, "three": 3, "four": 4}
+	})
+
+	it("should add primes to primeWords array", () => {
+		counter.getPrimes();
+		expect(counter.primeWords).to.be.an("array").that.does.include(1 && 2 && 3).but.does.not.include(4);
 	})
 })

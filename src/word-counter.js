@@ -1,7 +1,10 @@
+const _ = require('lodash');
+
 class WordCounter {
 	constructor(text) {
 		this.text = text;
 		this.wordCount = {};
+		this.primeWords = [];
 	}
 
 	makeLowerCase() {
@@ -23,6 +26,19 @@ class WordCounter {
 		return this.wordCount;
 	}
 
+	getPrimes() {
+		_.forIn(this.wordCount, (value, key) => {
+			let prime = true;
+			for(let i = 2; i < value; i++) {
+				if (value % i === 0) {
+					prime = false;
+				}
+			}
+			if (prime === true) {
+				this.primeWords.push(this.wordCount[key]);
+			}
+		})
+	}
 
 };
 
