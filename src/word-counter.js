@@ -14,9 +14,7 @@ class WordCounter {
 
 	countWords() {
 		this.text.forEach((word) => {
-			if (this.wordCount.hasOwnProperty(word)) {
-				this.wordCount[word] ++;
-			} else this.wordCount[word] = 1;
+			this.wordCount.hasOwnProperty(word) ? this.wordCount[word] ++ : this.wordCount[word] = 1;
 		})
 		return this.wordCount;
 	}
