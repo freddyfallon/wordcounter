@@ -1,5 +1,5 @@
 # Wordcounter (in NodeJS)
-![Screenshot of app](./screenshots/wordcounter.png)
+![](./screenshots/wordcounter.png)
 
 A few months ago, I built an application in JavaScript in the front-end that allows you to upload a txt file, count all the words and see which of those counts is a prime number. You can view it [here](https://github.com/freddyfallon/words-in-a-book).
 
@@ -34,7 +34,7 @@ This application is tested using Mocha and Chai, and you can easily run the test
 npm test
 ```
 
-![Screenshot of tests](./screenshots/tests.png)
+![](./screenshots/tests.png)
 
 You will see here that the tests all pass.
 
