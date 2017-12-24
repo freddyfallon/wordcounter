@@ -18,5 +18,10 @@
     "fs-readfile-promise": "^3.0.0",
     "lodash": "^4.17.4",
     "mocha": "^3.5.3"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
